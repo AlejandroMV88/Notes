@@ -1,0 +1,45 @@
+<h1 class="titulo m-5 text-center">
+    NotasApp</h1>
+<hr style="color:blue;">
+
+<div class="">
+    <button class="btn btn-primary" (click)="agregarNota()">
+            <i class="fa fa-plus"> </i> 
+            Agregar Notas
+        </button>
+</div>
+
+<div class="row" *ngFor="let list of notasService.listas ">
+    <div class="col">
+
+        <ul class=" list-group mt-4 ">
+            <li class="list-group-item mt-2 ">
+
+                <h3 class="text-center m-2">
+                    <div style="cursor: pointer;" (click)="notaSeleccionada( list )">
+                        {{list.CreadaEn | date:'medium'}} / {{list.titulo}}
+                    </div>
+
+                    <label style="font-size: initial;" class="slot">{{list.descripcion.length}} item</label>
+                    <button type="submit " class="boton btn btn-danger " (click)="borrarNota(list)">
+                        <i class="fa fa-trash "></i>    
+                    </button>
+                    <button type="submit " class="boton btn btn-primary" (click)="editarTitulo(list)">
+                        <i class="fa fa-pencil "></i>
+                    </button>
+                </h3>
+
+
+
+            </li>
+        </ul>
+
+
+    </div>
+</div>
+
+
+<div *ngIf="notasService.listas.length === 0" class="alert alert-warning text-center mt-3 ">
+    <h4 class="alert-heading ">No hay Notas </h4>
+    <i class="fa fa-exclamation fa-2x"></i>
+</div>
