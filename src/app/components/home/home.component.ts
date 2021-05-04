@@ -10,6 +10,7 @@ import Swal from 'sweetalert2'
 
 
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -78,8 +79,7 @@ export class HomeComponent  {
   }
 
   editarTitulo(lista:Lista){
-
-    Swal.fire({
+    Swal.fire ({
       title: ' Editr Nota!',
       input:'text',
       inputValue:lista.titulo,

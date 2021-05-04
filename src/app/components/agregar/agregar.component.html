@@ -1,49 +1,49 @@
-<h1 class="text-center"> Agregar Descripcion </h1>
-<hr>
+<div class="container animate__animated animate__fadeIn">
+    <h1 class="text-center"> Agregar Descripcion </h1>
+    <hr>
 
 
-<div class="row">
-    <div class="col mt-4">
+    <div class="row">
+        <div class="col mt-4">
 
-        <h3 class="text-center mb-3">
-            {{lista.titulo}}
-        </h3>
+            <h3 class="text-center mb-3">
+                {{lista.titulo}}
+            </h3>
 
-        <div (keyup.enter)="agregarCons()">
-            <input type="text" class="form-control" maxlength="300" [(ngModel)]="nombreDesc">
+            <div (keyup.enter)="agregarCons()">
+                <input type="text" class="form-control" maxlength="300" style="background-color: floralwhite;" [(ngModel)]="nombreDesc">
+            </div>
+
         </div>
-
-    </div>
-    <div class=" mt-4">
-        <button class="btn btn-danger" routerLink="home"> 
+        <div class=" mt-4">
+            <button class="btn btn-danger" routerLink="home"> 
             <i class="fa fa-angle-left"></i>
             Volver
         </button>
-        <button class="btn btn-primary m-1" (click)="agregarCons()">
+            <button class="btn btn-primary m-1" (click)="agregarCons()">
             <i class="fa fa-save"></i>
             Guardar
         </button>
-    </div>
+        </div>
 
 
-    <hr class="mt-3">
-    <div>
+        <hr class="mt-3">
+        <div>
 
-    </div>
-    <h1 class="mb-3" *ngIf="lista.descripcion.length >0">Cosas por hacer</h1>
+        </div>
+        <h1 class="mb-3" *ngIf="lista.descripcion.length >0">Cosas por hacer</h1>
 
-    <ul class="form-control " *ngFor="let item of lista.descripcion; let i = index">
-        <li class="animate__animated animate__fadeInDown">
-            {{item.descripcion}}
+        <ul class="form-control" style="background-color: floralwhite;" *ngFor="let item of lista.descripcion; let i = index">
+            <li class="animate__animated animate__fadeInDown" style="list-style: none;">
+                {{item.descripcion}}
 
-            <button type="submit " class="boton btn btn-danger" (click)="borrar(i)">
+                <button type="submit " class="boton btn btn-danger" (click)="borrar(i)">
                 <i class="fa fa-trash "></i>    
             </button>
-            <button type="submit " class="boton btn btn-primary">
-                <i class="fa fa-pencil "></i>
-            </button>
-        </li>
-    </ul>
+
+            </li>
+        </ul>
 
 
+    </div>
 </div>

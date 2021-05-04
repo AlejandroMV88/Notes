@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Agregar } from 'src/app/models/agregar.model';
 
@@ -12,7 +12,7 @@ import { NotasService } from 'src/app/services/notas.service';
   templateUrl: './agregar.component.html',
   
 })
-export class AgregarComponent implements OnInit {
+export class AgregarComponent  {
 
   lista: Lista;
   nombreDesc = '';   
@@ -27,8 +27,7 @@ export class AgregarComponent implements OnInit {
         
     }
 
-  ngOnInit(): void {
-  }
+  
 
 
   agregarCons(){
@@ -53,5 +52,8 @@ export class AgregarComponent implements OnInit {
 
       this.notasService.guardarStorage();
     }
+
+   
+    
   
 }
